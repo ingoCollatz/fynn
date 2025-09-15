@@ -91,7 +91,7 @@
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Unsere Leistungen
+          Meine Leistungen
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
           Professionelle Dienstleistungen für Ihr Zuhause und Ihre Immobilie. 
@@ -120,7 +120,7 @@
           Bereit für professionellen Service?
         </h3>
         <p class="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-          Kontaktieren Sie uns noch heute für eine kostenlose Beratung und ein unverbindliches Angebot.
+          Kontaktieren Sie mich noch heute für eine kostenlose Beratung und ein unverbindliches Angebot.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <button 

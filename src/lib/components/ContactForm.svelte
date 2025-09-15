@@ -15,8 +15,8 @@
       <div class="space-y-8">
         <div class="space-y-4">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900">
-            Lassen Sie uns 
-            <span class="text-blue-600">sprechen</span>
+            Lassen Sie mich 
+            <span class="text-blue-600">helfen</span>
           </h2>
           <p class="text-xl text-gray-600 leading-relaxed">
             Benötigen Sie professionellen Hausmeisterservice? 

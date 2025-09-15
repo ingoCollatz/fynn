@@ -73,7 +73,7 @@
           on:click={() => scrollToSection('about')}
           class="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
         >
-          Über uns
+          Über mich
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
         <button 
@@ -140,7 +140,7 @@
             class="text-left text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
             on:click={() => scrollToSection('about')}
           >
-            Über uns
+            Über mich
           </button>
           <button 
             class="text-left text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"

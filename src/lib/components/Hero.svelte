@@ -100,7 +100,7 @@
         <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 shadow-2xl">
           <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 space-y-4">
             <div class="flex items-center justify-between text-white">
-              <span class="text-lg font-semibold">Unsere Services</span>
+              <span class="text-lg font-semibold">Meine Services</span>
             </div>
             <div class="space-y-3">
               <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
