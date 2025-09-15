@@ -1,28 +1,106 @@
 <script>
   const services = [
-    { icon: "🛠️", title: "Reparaturen", desc: "Schnelle Hilfe bei kleinen und großen Schäden." },
-    { icon: "🏠", title: "Renovierungen", desc: "Professionelle Renovierungen für Ihr Zuhause." },
-    { icon: "🪚", title: "Möbelmontage", desc: "Aufbau und Montage von Möbeln und Küchen." },
-    { icon: "🌳", title: "Gartenarbeit", desc: "Pflege und Gestaltung von Gärten und Grünanlagen." },
-    { icon: "🚿", title: "Bad & Küche", desc: "Installationen und Reparaturen im Sanitärbereich." },
-    { icon: "🔧", title: "Kleine Elektroarbeiten", desc: "Installation von Lampen, Steckdosen uvm." }
+    { 
+      icon: "�️", 
+      title: "Entrümplung", 
+      desc: "Professionelle Entrümpelung von Häusern, Wohnungen, Kellern und Dachböden. Fachgerechte Entsorgung inklusive.",
+      features: ["Haushaltsauflösungen", "Kellerentrümplung", "Entsorgung inklusive"]
+    },
+    { 
+      icon: "✨", 
+      title: "Außen- & Innenreinigung", 
+      desc: "Gründliche Reinigung von Gebäuden innen und außen. Von der Glasreinigung bis zur Tiefenreinigung.",
+      features: ["Fassadenreinigung", "Fensterreinigung", "Grundreinigung"]
+    },
+    { 
+      icon: "🔧", 
+      title: "Hausmeisterservice", 
+      desc: "Umfassende Betreuung und Wartung Ihrer Immobilie. Regelmäßige Kontrollen und schnelle Reparaturen.",
+      features: ["Objektbetreuung", "Wartungsarbeiten", "Kleinreparaturen"]
+    },
+    { 
+      icon: "❄️", 
+      title: "Winterdienst", 
+      desc: "Zuverlässiger Räum- und Streudienst in der kalten Jahreszeit. Pünktlich und verkehrssicher.",
+      features: ["Schneeräumung", "Streudienst", "Eisentfernung"]
+    },
+    { 
+      icon: "🏗️", 
+      title: "Einbau von Fertigbauteilen", 
+      desc: "Fachgerechte Montage und Installation von Fertigbauteilen. Präzise Arbeit mit professionellem Werkzeug.",
+      features: ["Montagearbeiten", "Installationen", "Anschlussarbeiten"]
+    }
   ];
+
+  function scrollToContact() {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 </script>
 
-<section id="services" class="py-16 px-6 bg-gray-50 scroll-mt-20">
-  <h2 class="text-3xl font-bold text-center mb-10">Unsere Leistungen</h2>
-  <div class="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
-    {#each services as s}
-      <div class="bg-white p-6 rounded-2xl shadow text-center hover:shadow-lg transition-shadow">
-        <div class="text-4xl mb-4">{s.icon}</div>
-        <h3 class="text-xl font-semibold mb-2">{s.title}</h3>
-        <p class="text-gray-600">{s.desc}</p>
+<section id="services" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Unsere Leistungen
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Professionelle Dienstleistungen für Ihr Zuhause und Ihre Immobilie. 
+        Zuverlässig, sauber und fair – darauf können Sie sich verlassen.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {#each services as service}
+        <div class="group bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <!-- Icon -->
+          <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-2xl">{service.icon}</span>
+          </div>
+          
+          <!-- Content -->
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">{service.desc}</p>
+          
+          <!-- Features -->
+          <ul class="space-y-2">
+            {#each service.features as feature}
+              <li class="flex items-center text-sm text-gray-500">
+                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
+                {feature}
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {/each}
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12">
+      <h3 class="text-3xl font-bold text-white mb-4">
+        Bereit für professionellen Service?
+      </h3>
+      <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+        Kontaktieren Sie uns noch heute für eine kostenlose Beratung und ein unverbindliches Angebot.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button 
+          class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          on:click={scrollToContact}
+        >
+          Kostenlose Beratung
+        </button>
+        <a 
+          href="tel:+49123456789" 
+          class="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition-colors"
+        >
+          📞 Sofort anrufen
+        </a>
       </div>
-    {/each}
-  </div>
-  <div class="text-center mt-12">
-    <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-      Kostenvoranschlag anfordern
-    </a>
+    </div>
   </div>
 </section>

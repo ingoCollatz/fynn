@@ -5,7 +5,6 @@
   import Services from '$lib/components/Services.svelte';
   import Portfolio from '$lib/components/Portfolio.svelte';
   import WhyChooseUs from '$lib/components/WhyChooseUs.svelte';
-  import Testimonials from '$lib/components/Testimonials.svelte';
   import ContactForm from '$lib/components/ContactForm.svelte';
   import Footer from '$lib/components/Footer.svelte';
 </script>
@@ -16,6 +15,5 @@
 <Services />
 <Portfolio />
 <WhyChooseUs />
-<Testimonials />
 <ContactForm />
 <Footer />
