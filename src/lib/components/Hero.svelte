@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Logo from '$lib/assets/Logo.svelte';
+  
   function scrollToContact() {
     const contactElement = document.getElementById('contact');
     if (contactElement) {
@@ -13,6 +15,7 @@
       
       <!-- Left Content -->
       <div class="space-y-8">
+
         <!-- Badge -->
         <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium">
           <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
@@ -21,11 +24,11 @@
 
         <!-- Main Heading -->
         <div class="space-y-4">
-          <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            Fynn Schomann
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            Ihr Partner für Haus & Garten
           </h1>
-          <h2 class="text-2xl lg:text-3xl font-semibold text-blue-600">
-            Hausmeisterservice & Gartenpflege
+          <h2 class="text-xl lg:text-2xl font-semibold text-green-700">
+            Zuverlässig • Professionell • Fair
           </h2>
         </div>
 
