@@ -1,18 +1,18 @@
 services:
-  fynn-staging:
-    image: fynn-staging:${IMAGE_TAG}
+  fynn-dev:
+    image: fynn-dev:${IMAGE_TAG}
     environment:
       - NODE_ENV=production
     labels:
       - "traefik.enable=true"
 
-      # Staging domain
-      - "traefik.http.routers.fynn-staging.rule=Host(`fynn.stacktastik.dev`)"
-      - "traefik.http.routers.fynn-staging.entrypoints=websecure"
-      - "traefik.http.routers.fynn-staging.tls.certresolver=myresolver"
+      # Dev/Staging domain
+      - "traefik.http.routers.fynn-dev.rule=Host(`fynn.stacktastik.dev`)"
+      - "traefik.http.routers.fynn-dev.entrypoints=websecure"
+      - "traefik.http.routers.fynn-dev.tls.certresolver=myresolver"
 
       # Load balancer port
-      - "traefik.http.services.fynn-staging.loadbalancer.server.port=3000"
+      - "traefik.http.services.fynn-dev.loadbalancer.server.port=3000"
     networks:
       - web
     restart: unless-stopped
