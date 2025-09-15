@@ -1,5 +1,6 @@
 <script lang="ts">
   import Logo from '$lib/assets/Logo.svelte';
+  import SimpleIcon from './SimpleIcon.svelte';
   import { onMount } from 'svelte';
   
   let parallaxElement: HTMLElement;
@@ -95,9 +96,10 @@
             href="https://wa.me/49123456789" 
             target="_blank"
             rel="noopener noreferrer"
-            class="bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:border-green-300 hover:bg-green-50 transition-all duration-200 text-center"
+            class="bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:border-green-300 hover:bg-green-50 transition-all duration-200 flex items-center justify-center space-x-2"
           >
-            � WhatsApp Chat
+            <SimpleIcon name="whatsapp" size="20" className="text-green-600" />
+            <span>WhatsApp Chat</span>
           </a>
         </div>
       </div>
