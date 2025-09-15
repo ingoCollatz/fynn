@@ -19,8 +19,8 @@ The deployment is configured for the following domains:
 - **Primary**: `https://fynn-schomann.de`
 - **WWW redirect**: `https://www.fynn-schomann.de`
 
-### Staging (staging branch)
-- **Staging**: `https://staging.fynn-schomann.de`
+### Development (dev branch)
+- **Development**: `https://fynn.stacktastik.dev`
 
 ## Server Setup Requirements
 
@@ -50,8 +50,8 @@ The deployment will create the following structure on your server:
 ├── main/
 │   ├── docker-compose.main.yml
 │   └── image.tar (temporary)
-└── staging/
-    ├── docker-compose.staging.yml
+└── dev/
+    ├── docker-compose.dev.yml
     └── image.tar (temporary)
 ```
 
@@ -62,21 +62,21 @@ Configure your domain DNS to point to your Hetzner server:
 ```
 fynn-schomann.de        A     YOUR_SERVER_IP
 www.fynn-schomann.de    A     YOUR_SERVER_IP
-staging.fynn-schomann.de A    YOUR_SERVER_IP
+fynn.stacktastik.dev A    YOUR_SERVER_IP
 ```
 
 ## Deployment Process
 
 The deployment happens automatically when you push to:
 - **main branch** → deploys to production
-- **staging branch** → deploys to staging
+- **dev branch** → deploys to development
 
 ### Manual Deployment Steps:
 
 1. **Set up GitHub Secrets** in your repository settings
 2. **Configure DNS** to point to your server
 3. **Ensure Traefik is running** on your server
-4. **Push to main or staging branch**
+4. **Push to main or dev branch**
 
 The GitHub Actions workflow will:
 1. Run tests and build the SvelteKit application
@@ -116,7 +116,7 @@ After deployment, the workflow automatically tests:
 
 ```bash
 # Check container logs
-docker logs fynn-main  # or fynn-staging
+docker logs fynn-main  # or fynn-dev
 
 # Check Traefik logs
 docker logs traefik
