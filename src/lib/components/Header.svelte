@@ -1,7 +1,28 @@
 <script lang="ts">
   import HeaderLogo from '$lib/assets/HeaderLogo.svelte';
+  import { onMount } from 'svelte';
   
   let mobileMenuOpen = false;
+  let scrollY = 0;
+  let isScrolled = false;
+  
+  // Calculate logo size based on scroll position
+  $: logoSize = isScrolled ? "160" : "320";
+  $: headerHeight = isScrolled ? "h-16" : "h-24";
+  
+  onMount(() => {
+    const handleScroll = () => {
+      scrollY = window.scrollY;
+      isScrolled = scrollY > 50;
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial call
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
   
   function toggleMobileMenu() {
     mobileMenuOpen = !mobileMenuOpen;
@@ -20,13 +41,16 @@
   }
 </script>
 
-<header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+<header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
+    <div class="flex justify-between items-center {headerHeight} transition-all duration-300">
       
       <!-- Logo/Brand -->
       <div class="flex items-center">
-        <HeaderLogo size="200" className="hover:scale-105 transition-transform duration-200 cursor-pointer" />
+        <HeaderLogo 
+          size={logoSize} 
+          className="hover:scale-105 transition-all duration-300 cursor-pointer" 
+        />
       </div>
       
       <!-- Desktop Navigation -->
