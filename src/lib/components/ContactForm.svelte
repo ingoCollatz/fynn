@@ -83,8 +83,9 @@
         <form class="space-y-6">
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+              <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
               <input 
+                id="contact-name"
                 type="text" 
                 class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
                 placeholder="Ihr Name"
@@ -92,8 +93,9 @@
               />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail *</label>
+              <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail *</label>
               <input 
+                id="contact-email"
                 type="email" 
                 class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
                 placeholder="ihre@email.de"
@@ -103,8 +105,9 @@
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+            <label for="contact-phone" class="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
             <input 
+              id="contact-phone"
               type="tel" 
               class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
               placeholder="+49 123 456 789"
@@ -112,21 +115,22 @@
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Service *</label>
-            <select class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" required>
+            <label for="contact-service" class="block text-sm font-medium text-gray-700 mb-2">Service *</label>
+            <select id="contact-service" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" required>
               <option value="">Service auswählen...</option>
-              <option>Entrümplung</option>
-              <option>Außen- & Innenreinigung</option>
-              <option>Hausmeisterservice</option>
-              <option>Winterdienst</option>
-              <option>Einbau von Fertigbauteilen</option>
-              <option>Sonstiges</option>
+              <option value="entruempelung">Entrümplung</option>
+              <option value="reinigung">Außen- & Innenreinigung</option>
+              <option value="hausmeister">Hausmeisterservice</option>
+              <option value="winterdienst">Winterdienst</option>
+              <option value="fertigbauteile">Einbau von Fertigbauteilen</option>
+              <option value="sonstiges">Sonstiges</option>
             </select>
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Nachricht *</label>
+            <label for="contact-message" class="block text-sm font-medium text-gray-700 mb-2">Nachricht *</label>
             <textarea 
+              id="contact-message"
               rows="4"
               class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
               placeholder="Beschreiben Sie Ihr Anliegen..."

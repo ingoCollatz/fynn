@@ -107,7 +107,6 @@
           <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 space-y-4">
             <div class="flex items-center justify-between text-white">
               <span class="text-lg font-semibold">Unsere Services</span>
-              <span class="text-2xl">🏠</span>
             </div>
             <div class="space-y-3">
               <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">

@@ -1,0 +1,27 @@
+services:
+  fynn-main:
+    image: fynn-main:${IMAGE_TAG}
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "traefik.enable=true"
+
+      # Main domain
+      - "traefik.http.routers.fynn-main.rule=Host(`fynn-schomann.de`)"
+      - "traefik.http.routers.fynn-main.entrypoints=websecure"
+      - "traefik.http.routers.fynn-main.tls.certresolver=myresolver"
+
+      # WWW redirect
+      - "traefik.http.routers.fynn-www.rule=Host(`www.fynn-schomann.de`)"
+      - "traefik.http.routers.fynn-www.entrypoints=websecure"
+      - "traefik.http.routers.fynn-www.tls.certresolver=myresolver"
+
+      # Load balancer port
+      - "traefik.http.services.fynn-main.loadbalancer.server.port=3000"
+    networks:
+      - web
+    restart: unless-stopped
+
+networks:
+  web:
+    external: true
