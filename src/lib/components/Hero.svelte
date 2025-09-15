@@ -61,7 +61,7 @@
           Qualität, Pünktlichkeit und faire Preise – darauf können Sie sich verlassen.
         </p>
 
-        <!-- Key Points -->
+        <!-- Key Points
         <div class="grid sm:grid-cols-3 gap-4">
           <div class="flex items-center space-x-2">
             <div class="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -75,7 +75,7 @@
             <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
             <span class="text-sm font-medium text-gray-700">Fair</span>
           </div>
-        </div>
+        </div> -->
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4">

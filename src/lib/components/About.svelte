@@ -19,39 +19,6 @@
             für alle Ihre Hausmeister- und Gartenpflegearbeiten. Qualität hat bei mir oberste Priorität.
           </p>
         </div>
-
-        <!-- Key Values -->
-        <div class="grid sm:grid-cols-3 gap-6">
-          <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
-            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Zuverlässig</h3>
-            <p class="text-sm text-gray-600">Pünktlich und termintreu</p>
-          </div>
-          
-          <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
-            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Professionell</h3>
-            <p class="text-sm text-gray-600">Fachgerechte Ausführung</p>
-          </div>
-          
-          <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
-            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Fair</h3>
-            <p class="text-sm text-gray-600">Transparente Preise</p>
-          </div>
-        </div>
       </div>
 
       <!-- Right Visual -->
