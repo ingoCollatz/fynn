@@ -21,12 +21,17 @@
   function scrollToContact() {
     const contactElement = document.getElementById('contact');
     if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80; // Account for fixed header height
+      const elementPosition = contactElement.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   }
 </script>
 
-<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden scroll-mt-20">
   <!-- Background Image -->
   <div class="absolute inset-0 bg-gradient-to-br from-green-50 via-amber-50 to-orange-50"></div>
     <!-- Background Image with Parallax -->

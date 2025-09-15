@@ -1,4 +1,4 @@
-<section id="about" class="py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 relative overflow-hidden">
+<section id="about" class="py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 relative overflow-hidden scroll-mt-20">
   <!-- Background Elements -->
   <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/30 to-emerald-200/20 rounded-full -translate-x-48 -translate-y-48 blur-3xl"></div>
   <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-blue-200/30 to-indigo-200/20 rounded-full translate-x-40 translate-y-40 blur-3xl"></div>

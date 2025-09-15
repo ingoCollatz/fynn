@@ -33,9 +33,24 @@
   }
 
   function scrollToSection(sectionId: string) {
+    // Special case for home - scroll to absolute top
+    if (sectionId === 'home') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      closeMobileMenu();
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80; // Account for fixed header height
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
     closeMobileMenu();
   }
@@ -63,17 +78,17 @@
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
         <button 
-          on:click={() => scrollToSection('services')}
-          class="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
-        >
-          Leistungen
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-        </button>
-        <button 
           on:click={() => scrollToSection('about')}
           class="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
         >
           Über mich
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+        </button>
+        <button 
+          on:click={() => scrollToSection('services')}
+          class="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
+        >
+          Leistungen
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
         </button>
         <button 
@@ -132,15 +147,15 @@
           </button>
           <button 
             class="text-left text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
-            on:click={() => scrollToSection('services')}
-          >
-            Leistungen
-          </button>
-          <button 
-            class="text-left text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
             on:click={() => scrollToSection('about')}
           >
             Über mich
+          </button>
+          <button 
+            class="text-left text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
+            on:click={() => scrollToSection('services')}
+          >
+            Leistungen
           </button>
           <button 
             class="text-left text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"

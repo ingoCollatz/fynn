@@ -67,12 +67,17 @@
   function scrollToContact() {
     const contactElement = document.getElementById('contact');
     if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 80; // Account for fixed header height
+      const elementPosition = contactElement.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   }
 </script>
 
-<section id="services" class="py-20 bg-gradient-to-br from-gray-50 via-green-50 to-blue-50 relative overflow-hidden">
+<section id="services" class="py-20 bg-gradient-to-br from-gray-50 via-green-50 to-blue-50 relative overflow-hidden scroll-mt-20">
   <!-- Background Image with Parallax -->
   <div 
     bind:this={parallaxElement}
