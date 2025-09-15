@@ -11,7 +11,7 @@ Add these secrets in your GitHub repository settings (Settings → Secrets and v
 ## Deployment
 
 - Push to `main` branch → deploys to `https://fynn-schomann.de`
-- Push to `dev` branch → deploys to `https://fynn.stacktastik.dev`
+- Push to `dev` branch → deploys to `https://fynn.stacktastic.dev`
 
 ## Prerequisites on Server
 

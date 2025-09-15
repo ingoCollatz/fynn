@@ -83,7 +83,7 @@ jobs:
             if [ "${{ github.ref_name }}" = "main" ]; then
               HEALTH_URL="https://fynn-schomann.de"
             else
-              HEALTH_URL="https://fynn.stacktastik.dev"
+              HEALTH_URL="https://fynn.stacktastic.dev"
             fi
 
             echo "🔍 Testing deployment at $HEALTH_URL"

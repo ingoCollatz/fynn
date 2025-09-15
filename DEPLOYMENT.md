@@ -20,7 +20,7 @@ The deployment is configured for the following domains:
 - **WWW redirect**: `https://www.fynn-schomann.de`
 
 ### Development (dev branch)
-- **Development**: `https://fynn.stacktastik.dev`
+- **Development**: `https://fynn.stacktastic.dev`
 
 ## Server Setup Requirements
 
@@ -62,7 +62,7 @@ Configure your domain DNS to point to your Hetzner server:
 ```
 fynn-schomann.de        A     YOUR_SERVER_IP
 www.fynn-schomann.de    A     YOUR_SERVER_IP
-fynn.stacktastik.dev A    YOUR_SERVER_IP
+fynn.stacktastic.dev A    YOUR_SERVER_IP
 ```
 
 ## Deployment Process
