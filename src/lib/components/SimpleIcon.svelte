@@ -20,7 +20,7 @@
 
   // Map icon names to Simple Icons exports
   const iconMap: Record<string, any> = {
-    phone: simpleIcons.siLinphone,s
+    phone: simpleIcons.siLinphone,
     telephone: simpleIcons.siLinphone,
     linphone: simpleIcons.siLinphone,
     whatsapp: simpleIcons.siWhatsapp,
