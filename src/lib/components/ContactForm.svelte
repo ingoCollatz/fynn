@@ -5,7 +5,7 @@
 <section id="contact" class="py-20 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 relative overflow-hidden scroll-mt-20">
   <!-- Background Image -->
   <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15" 
-       style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');"></div>
+       style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80');"></div>
   
   <!-- Background Elements -->
   <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/30 to-emerald-200/20 rounded-full -translate-x-48 -translate-y-48 blur-3xl"></div>
