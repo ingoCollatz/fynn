@@ -92,10 +92,12 @@
           </button>
           
           <a 
-            href="tel:+49123456789" 
-            class="bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 text-center"
+            href="https://wa.me/49123456789" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:border-green-300 hover:bg-green-50 transition-all duration-200 text-center"
           >
-            📞 +49 123 456 789
+            � WhatsApp Chat
           </a>
         </div>
       </div>

@@ -22,13 +22,5 @@
       <p class="text-gray-600">Auch kurzfristige Einsätze sind möglich.</p>
     </div>
     </div>
-    
-    <div class="text-center mt-16">
-      <p class="text-xl text-gray-600 mb-8">Überzeugt? Dann kontaktieren Sie mich noch heute!</p>
-      <a href="https://wa.me/49123456789" class="inline-flex items-center bg-green-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-600 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
-        <span class="text-xl mr-2">💬</span>
-        WhatsApp Chat starten
-      </a>
-    </div>
   </div>
 </section>

@@ -118,30 +118,6 @@
           </div>
         {/each}
       </div>
-
-      <!-- Call to Action -->
-      <div class="text-center bg-gradient-to-r from-green-600 to-emerald-600 rounded-3xl p-12">
-        <h3 class="text-3xl font-bold text-white mb-4">
-          Bereit für professionellen Service?
-        </h3>
-        <p class="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-          Kontaktieren Sie mich noch heute für eine kostenlose Beratung und ein unverbindliches Angebot.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button 
-            class="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            on:click={scrollToContact}
-          >
-            Kostenlose Beratung
-          </button>
-          <a 
-            href="tel:+49123456789" 
-            class="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-800 transition-colors"
-          >
-            📞 Sofort anrufen
-          </a>
-        </div>
-      </div>
     </div>
   </div>
 </section>

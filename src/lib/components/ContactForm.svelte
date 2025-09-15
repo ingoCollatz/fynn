@@ -34,9 +34,12 @@
             </div>
             <div>
               <h3 class="font-semibold text-gray-900 mb-1">Telefon</h3>
-              <a href="tel:+49123456789" class="text-blue-600 font-medium text-lg hover:text-blue-700">
+              <span class="text-blue-600 font-medium text-lg block md:hidden">
+                <a href="tel:+49123456789" class="hover:text-blue-700">+49 123 456 789</a>
+              </span>
+              <span class="text-blue-600 font-medium text-lg hidden md:block">
                 +49 123 456 789
-              </a>
+              </span>
               <p class="text-gray-500 text-sm mt-1">Mo-Fr: 7:00-19:00 Uhr • Sa: 8:00-16:00 Uhr</p>
             </div>
           </div>
