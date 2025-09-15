@@ -1,5 +1,10 @@
-<section id="about" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="about" class="py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/30 to-emerald-200/20 rounded-full -translate-x-48 -translate-y-48 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-blue-200/30 to-indigo-200/20 rounded-full translate-x-40 translate-y-40 blur-3xl"></div>
+  <div class="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-r from-purple-200/20 to-pink-200/20 rounded-full blur-3xl"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       
       <!-- Left Content -->
@@ -45,18 +50,6 @@
             </div>
             <h3 class="font-semibold text-gray-900 mb-2">Fair</h3>
             <p class="text-sm text-gray-600">Transparente Preise</p>
-          </div>
-        </div>
-
-        <!-- Experience Stats -->
-        <div class="grid grid-cols-2 gap-8">
-          <div>
-            <h4 class="text-2xl font-bold text-blue-600 mb-2">5+</h4>
-            <p class="text-gray-600 font-medium">Jahre Erfahrung</p>
-          </div>
-          <div>
-            <h4 class="text-2xl font-bold text-blue-600 mb-2">100%</h4>
-            <p class="text-gray-600 font-medium">Kundenzufriedenheit</p>
           </div>
         </div>
       </div>

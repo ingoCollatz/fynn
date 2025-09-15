@@ -1,5 +1,14 @@
-<section id="contact" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="contact" class="py-20 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 relative overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15" 
+       style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');"></div>
+  
+  <!-- Background Elements -->
+  <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/30 to-emerald-200/20 rounded-full -translate-x-48 -translate-y-48 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-purple-200/30 to-pink-200/20 rounded-full translate-x-40 translate-y-40 blur-3xl"></div>
+  <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-blue-200/20 to-indigo-200/20 rounded-full -translate-x-32 -translate-y-32 blur-3xl"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid lg:grid-cols-2 gap-16 items-start">
       
       <!-- Left: Contact Information -->
@@ -17,7 +26,7 @@
 
         <!-- Contact Methods -->
         <div class="space-y-6">
-          <div class="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-start space-x-4 p-6 bg-white/80 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
             <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
               <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
@@ -32,7 +41,7 @@
             </div>
           </div>
 
-          <div class="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-start space-x-4 p-6 bg-white/80 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
             <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
               <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
@@ -47,7 +56,7 @@
             </div>
           </div>
 
-          <div class="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-start space-x-4 p-6 bg-white/80 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
             <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
               <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -62,16 +71,10 @@
             </div>
           </div>
         </div>
-
-        <!-- Service Promise -->
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 text-white">
-          <h3 class="font-bold text-lg mb-2">⚡ Schnelle Reaktionszeit</h3>
-          <p class="text-blue-100">Antwort auf Anfragen innerhalb von 2 Stunden während der Geschäftszeiten.</p>
-        </div>
       </div>
 
       <!-- Right: Contact Form -->
-      <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-10">
+      <div class="bg-white/80 rounded-3xl shadow-xl p-8 lg:p-10">
         <div class="mb-8">
           <h3 class="text-2xl font-bold text-gray-900 mb-2">Kostenlose Beratung anfragen</h3>
           <p class="text-gray-600">Beschreiben Sie Ihr Anliegen und erhalten Sie ein unverbindliches Angebot.</p>

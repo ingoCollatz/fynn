@@ -1,5 +1,22 @@
 <script lang="ts">
   import Logo from '$lib/assets/Logo.svelte';
+  import { onMount } from 'svelte';
+  
+  let parallaxElement: HTMLElement;
+  let scrollY = 0;
+  
+  onMount(() => {
+    const handleScroll = () => {
+      scrollY = window.scrollY;
+      if (parallaxElement) {
+        const speed = 0.5; // Adjust this value to control parallax speed
+        parallaxElement.style.transform = `translateY(${scrollY * speed}px)`;
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
   
   function scrollToContact() {
     const contactElement = document.getElementById('contact');
@@ -9,12 +26,24 @@
   }
 </script>
 
-<section id="home" class="relative min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      
-      <!-- Left Content -->
-      <div class="space-y-8">
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-gradient-to-br from-green-50 via-amber-50 to-orange-50"></div>
+    <!-- Background Image with Parallax -->
+  <div 
+    bind:this={parallaxElement}
+    class="absolute inset-0 w-full h-[120%] bg-cover bg-center bg-no-repeat opacity-60 will-change-transform"
+    style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'); top: -10%;"
+  ></div>
+  
+  <!-- Content Card -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+    <!-- Main Card Container -->
+    <div class="bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-8 lg:p-12 border border-white/20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="space-y-8">
 
         <!-- Badge -->
         <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium">
@@ -73,7 +102,7 @@
       </div>
 
       <!-- Right Visual -->
-      <div class="relative">
+      <div class="relative hidden lg:block">
         <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 shadow-2xl">
           <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 space-y-4">
             <div class="flex items-center justify-between text-white">
@@ -106,6 +135,7 @@
         <div class="absolute -bottom-6 -left-6 w-16 h-16 bg-green-400 rounded-full opacity-30"></div>
       </div>
 
+      </div>
     </div>
   </div>
 </section>
