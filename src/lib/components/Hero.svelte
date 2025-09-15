@@ -45,12 +45,6 @@
         <!-- Left Content -->
         <div class="space-y-8">
 
-        <!-- Badge -->
-        <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium">
-          <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-          Professioneller Service seit Jahren
-        </div>
-
         <!-- Main Heading -->
         <div class="space-y-4">
           <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
