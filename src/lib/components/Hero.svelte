@@ -1,11 +1,18 @@
 <script lang="ts">
   import Logo from '$lib/assets/Logo.svelte';
   import SimpleIcon from './SimpleIcon.svelte';
+  import { onMount } from 'svelte';
   
   let scrollY = 0;
+  let isMobile = false;
   
-  // Parallax transform calculation
-  $: parallaxTransform = `translateY(${scrollY * 0.5}px)`;
+  onMount(() => {
+    // Detect mobile devices
+    isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+  });
+  
+  // Parallax transform calculation - disable on mobile to prevent stuttering
+  $: parallaxTransform = isMobile ? 'translateY(0px)' : `translateY(${scrollY * 0.5}px)`;
   
   function scrollToContact() {
     const contactElement = document.getElementById('contact');

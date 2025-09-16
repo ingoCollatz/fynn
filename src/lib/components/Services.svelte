@@ -1,8 +1,16 @@
 <script lang="ts">
-  let scrollY = 0;
+  import { onMount } from 'svelte';
   
-  // Parallax transform calculation (same as Hero)
-  $: parallaxTransform = `translateY(${scrollY * 0.3}px)`;
+  let scrollY = 0;
+  let isMobile = false;
+  
+  onMount(() => {
+    // Detect mobile devices
+    isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+  });
+  
+  // Parallax transform calculation - disable on mobile to prevent stuttering
+  $: parallaxTransform = isMobile ? 'translateY(0px)' : `translateY(${scrollY * 0.3}px)`;
 
   const services = [
     { 
