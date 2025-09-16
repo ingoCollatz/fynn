@@ -5,11 +5,71 @@
   
   let scrollY = 0;
   let isMobile = false;
+  let currentSlide = 0;
+  let slideInterval: number;
   
+  // Services data for slideshow
+  const services = [
+    {
+      name: 'Entrümplung',
+      image: 'https://images.unsplash.com/photo-1610459716431-e07abcf74230?w=400&h=300&&fitq=crop&auto=format',
+      description: 'Professionelle Entrümpelung von Wohnungen, Häusern und Gewerberäumen'
+    },
+    {
+      name: 'Reinigungsservice',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop&auto=format',
+      description: 'Gründliche Reinigung für Privat- und Geschäftskunden'
+    },
+    {
+      name: 'Hausmeisterservice',
+      image: 'https://images.unsplash.com/photo-1540103711724-ebf833bde8d1?&w=400&h=300&fit=crop&auto=format',
+      description: 'Zuverlässige Hausmeistertätigkeiten und Instandhaltung'
+    },
+    {
+      name: 'Winterdienst',
+      image: 'https://images.unsplash.com/photo-1611589053483-9976cc7e5e76?q=80&w=400&h=300&auto=format&fit=crop',
+      description: 'Schneeräumung und Streudienst für sichere Wege'
+    },
+    {
+      name: 'Einbau von Fertigbauteilen',
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop&auto=format',
+      description: 'Fachgerechte Montage von Fertigbauteilen und Konstruktionen'
+    },
+    {
+      name: 'Gartenpflege',
+      image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop&auto=format',
+      description: 'Professionelle Gartenpflege und Landschaftsgestaltung'
+    }
+  ];
+
   onMount(() => {
     // Detect mobile devices
     isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+    
+    // Start slideshow
+    startSlideshow();
+    
+    return () => {
+      if (slideInterval) {
+        clearInterval(slideInterval);
+      }
+    };
   });
+
+  function startSlideshow() {
+    slideInterval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % services.length;
+    }, 3000); // Change slide every 3 seconds
+  }
+
+  function goToSlide(index: number) {
+    currentSlide = index;
+    // Restart the interval
+    if (slideInterval) {
+      clearInterval(slideInterval);
+    }
+    startSlideshow();
+  }
   
   // Parallax transform calculation - disable on mobile to prevent stuttering
   $: parallaxTransform = isMobile ? 'translateY(0px)' : `translateY(${scrollY * 0.5}px)`;
@@ -19,6 +79,18 @@
     if (contactElement) {
       const headerHeight = 80; // Account for fixed header height
       const elementPosition = contactElement.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
+  
+  function scrollToServices() {
+    const servicesElement = document.getElementById('services');
+    if (servicesElement) {
+      const headerHeight = 80; // Account for fixed header height
+      const elementPosition = servicesElement.offsetTop - headerHeight;
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
@@ -120,85 +192,46 @@
             <div class="flex items-center justify-between text-white">
               <span class="text-lg font-semibold">Meine Services</span>
             </div>
-            <div class="space-y-3">
-              <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
-                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
-                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 3V2a1 1 0 011-1h4a1 1 0 011 1v1h5a1 1 0 110 2h-1v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5H4a1 1 0 110-2h5zM7 5v14h10V5H7zm2 3a1 1 0 112 0v8a1 1 0 11-2 0V8zm4 0a1 1 0 112 0v8a1 1 0 11-2 0V8z"/>
-                  </svg>
-                </div>
-                <span class="text-white font-medium">Entrümplung</span>
+            
+            <!-- Slideshow Container -->
+            <div class="relative overflow-hidden rounded-lg min-h-[280px]">
+              <div 
+                class="flex transition-transform duration-500 ease-in-out"
+                style="transform: translateX(-{currentSlide * 100}%)"
+              >
+                {#each services as service, index}
+                  <div class="w-full flex-shrink-0 px-2">
+                    <!-- Current Service Display -->
+                    <div class="relative rounded-lg overflow-hidden h-64 group">
+                      <!-- Background Image -->
+                      <div 
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105 opacity-50"
+                        style="background-image: url('{service.image}')"
+                      ></div>
+                      <!-- Overlay -->
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                      <!-- Content -->
+                      <div class="relative h-full flex flex-col justify-end p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">{service.name}</h3>
+                        <p class="text-sm text-white/90 leading-relaxed">{service.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                {/each}
               </div>
-              <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
-                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
-                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <!-- Large sparkle (center, moved up) -->
-                    <path d="M12 7l2.5 5L20 14.5l-5.5 2.5L12 22l-2.5-5L4 14.5l5.5-2.5L12 7z"/>
-                    <!-- Medium sparkle (top-right offset, moved up) -->
-                    <path d="M17 2l1.5 3L21 6.5l-2.5 1.5L17 11l-1.5-3L13 6.5l2.5-1.5L17 2z" opacity="0.7"/>
-                    <!-- Small sparkle (left side, moved up) -->
-                    <path d="M6 4l1 2L9 7l-2 1L6 10l-1-2L3 7l2-1L6 4z" opacity="0.5"/>
-                  </svg>
-                </div>
-                <span class="text-white font-medium">Reinigungsservice</span>
-              </div>
-              <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
-                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
-                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                  </svg>
-                </div>
-                <span class="text-white font-medium">Hausmeisterservice</span>
-              </div>
-              <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
-                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
-                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M2 12h20M5.636 5.636l12.728 12.728M18.364 5.636L5.636 18.364M12 6l-2-2m2 2l2-2m-2 2v4m0-4l-2 2m2-2l2 2M12 18l-2 2m2-2l2 2m-2-2v-4m0 4l-2-2m2 2l2-2M6 12l-2-2m2 2l-2 2m2-2h4m-4 0l2-2m-2 2l2 2M18 12l2-2m-2 2l2 2m-2-2h-4m4 0l-2-2m2 2l-2 2"/>
-                  </svg>
-                </div>
-                <span class="text-white font-medium">Winterdienst</span>
-              </div>
-              <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
-                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
-                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <!-- Vertical lattice mast (fatter) -->
-                    <rect x="10" y="4" width="4" height="16" fill="currentColor"/>
-                    <!-- Mast lattice pattern (thicker strokes) -->
-                    <path d="M10 5 L12 7 L14 5 M10 8 L12 10 L14 8 M10 11 L12 13 L14 11 M10 14 L12 16 L14 14 M10 17 L12 19 L14 17" 
-                          stroke="rgba(0,0,0,0.3)" stroke-width="0.8" fill="none"/>
-                    
-                    <!-- Rotating connection at mast top (bigger) -->
-                    <circle cx="12" cy="4" r="2" fill="currentColor"/>
-                    <circle cx="12" cy="4" r="1" fill="rgba(255,255,255,0.3)"/>
-                    
-                    <!-- Long horizontal lattice arm (fatter) -->
-                    <rect x="14" y="3" width="9" height="2" fill="currentColor"/>
-                    <!-- Counter arm (fatter, shorter rear end) -->
-                    <rect x="3" y="3" width="9" height="2" fill="currentColor"/>
-                    
-                    <!-- Horizontal arm lattice pattern (thicker) -->
-                    <path d="M3 3 L4 5 L5 3 L6 5 L7 3 L8 5 L9 3 L10 5 L11 3 L12 5" 
-                          stroke="rgba(0,0,0,0.25)" stroke-width="0.6" fill="none"/>
-                    <path d="M14 3 L15 5 L16 3 L17 5 L18 3 L19 5 L20 3 L21 5 L22 3 L23 5" 
-                          stroke="rgba(0,0,0,0.25)" stroke-width="0.6" fill="none"/>
-                    
-                    <!-- Dangling hook and cable (thicker, shorter) -->
-                    <rect x="21" y="5" width="1" height="7" fill="rgba(255,255,255,0.9)"/>
-                    <path d="M21 12 Q23 12 23 14 Q23 16 21 16" 
-                          stroke="rgba(255,255,255,1)" stroke-width="1.2" fill="none"/>
-                    
-                    <!-- Counterweights on rear end (bigger) -->
-                    <rect x="3" y="1" width="3" height="3" rx="0.5" fill="rgba(255,255,255,0.9)"/>
-                    <rect x="3.3" y="1.5" width="2.4" height="0.6" fill="rgba(0,0,0,0.2)"/>
-                    <rect x="3.3" y="2.5" width="2.4" height="0.6" fill="rgba(0,0,0,0.2)"/>
-                    <rect x="3.3" y="3.5" width="2.4" height="0.6" fill="rgba(0,0,0,0.2)"/>
-                    
-                    <!-- Crane base (wider) -->
-                    <rect x="9" y="19" width="6" height="3" rx="0.8" fill="currentColor"/>
-                  </svg>
-                </div>
-                <span class="text-white font-medium">Einbau von Fertigbauteilen</span>
-              </div>
+            </div>
+            
+            <!-- View All Services Button -->
+            <div class="pt-4 border-t border-white/20">
+              <button 
+                on:click={scrollToServices}
+                class="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg p-3 flex items-center justify-center space-x-2 text-white font-medium transition-all duration-300 hover:scale-105"
+              >
+                <span>Alle Services ansehen</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
