@@ -96,15 +96,29 @@
       <!-- Services Grid - Compact -->
       <div class="grid md:grid-cols-2 gap-8 mb-16">
         {#each services as service}
-          <div class="flex items-start gap-4 p-6 rounded-xl bg-gray-50/50 hover:bg-white/70 transition-all duration-300 border border-gray-100/50">
-
-            
-            <!-- Content -->
-            <div class="flex-1 min-w-0">
-              <h3 class="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">{service.desc}</p>
+          {#if service.title === 'Entrümplung'}
+            <a 
+              href="/services/entrümplung" 
+              class="flex items-start gap-4 p-6 rounded-xl bg-gray-50/50 hover:bg-white/70 hover:shadow-lg transition-all duration-300 border border-gray-100/50 group cursor-pointer"
+            >
+              <!-- Content -->
+              <div class="flex-1 min-w-0">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">{service.desc}</p>
+                <div class="mt-3 text-sm text-blue-600 font-medium group-hover:text-blue-700">
+                  Mehr erfahren →
+                </div>
+              </div>
+            </a>
+          {:else}
+            <div class="flex items-start gap-4 p-6 rounded-xl bg-gray-50/50 hover:bg-white/70 transition-all duration-300 border border-gray-100/50">
+              <!-- Content -->
+              <div class="flex-1 min-w-0">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">{service.desc}</p>
+              </div>
             </div>
-          </div>
+          {/if}
         {/each}
       </div>
     </div>

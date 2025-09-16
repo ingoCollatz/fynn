@@ -1,7 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
 
   onMount(() => {
     // Set page title
@@ -14,9 +12,7 @@
   <meta name="description" content="Datenschutzerklärung von Fynn Schomann Hausmeisterservice & Gartenpflege" />
 </svelte:head>
 
-<Header />
-
-<main class="min-h-screen bg-white py-20">
+<div class="min-h-screen bg-white py-20">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header -->
     <div class="mb-12">
@@ -213,6 +209,4 @@
     </div>
 
   </div>
-</main>
-
-<Footer />
+</div>
