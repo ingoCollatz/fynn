@@ -42,6 +42,12 @@
       title: "Einbau von Fertigbauteilen", 
       desc: "Fachgerechte Montage und Installation von Fertigbauteilen. Präzise Arbeit mit professionellem Werkzeug.",
       features: ["Montagearbeiten", "Installationen", "Anschlussarbeiten"]
+    },
+    { 
+      icon: "🌱", 
+      title: "Gartenpflege", 
+      desc: "Professionelle Gartenpflege und Landschaftsgestaltung. Von der Rasenpflege bis zur Heckenschnitt.",
+      features: ["Rasenpflege", "Heckenschnitt", "Bepflanzung"]
     }
   ];
 
