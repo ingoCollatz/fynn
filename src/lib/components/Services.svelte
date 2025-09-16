@@ -81,7 +81,7 @@
   <!-- Background Image with Parallax -->
   <div 
     bind:this={parallaxElement}
-    class="absolute inset-0 w-full h-[150%] -top-[50%] bg-cover bg-center bg-no-repeat opacity-60
+    class="absolute inset-0 w-full h-[150%] -top-[50%] bg-cover bg-center bg-no-repeat opacity-60 will-change-transform
            bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')]"
   ></div>
   
