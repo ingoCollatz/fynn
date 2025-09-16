@@ -38,8 +38,8 @@
     <!-- Background Image with Parallax -->
   <div 
     bind:this={parallaxElement}
-    class="absolute inset-0 w-full h-[120%] bg-cover bg-center bg-no-repeat opacity-60 will-change-transform"
-    style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'); top: -10%;"
+    class="absolute inset-0 w-full h-[120%] -top-[10%] bg-cover bg-center bg-no-repeat opacity-60
+           bg-[url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')]"
   ></div>
   
   <!-- Content Card -->
@@ -125,19 +125,40 @@
             </div>
             <div class="space-y-3">
               <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
-                <span class="text-xl">🗑️</span>
+                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 3V2a1 1 0 011-1h4a1 1 0 011 1v1h5a1 1 0 110 2h-1v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5H4a1 1 0 110-2h5zM7 5v14h10V5H7zm2 3a1 1 0 112 0v8a1 1 0 11-2 0V8zm4 0a1 1 0 112 0v8a1 1 0 11-2 0V8z"/>
+                  </svg>
+                </div>
                 <span class="text-white font-medium">Entrümplung</span>
               </div>
               <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
-                <span class="text-xl">✨</span>
+                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <!-- Large sparkle (center, moved up) -->
+                    <path d="M12 7l2.5 5L20 14.5l-5.5 2.5L12 22l-2.5-5L4 14.5l5.5-2.5L12 7z"/>
+                    <!-- Medium sparkle (top-right offset, moved up) -->
+                    <path d="M17 2l1.5 3L21 6.5l-2.5 1.5L17 11l-1.5-3L13 6.5l2.5-1.5L17 2z" opacity="0.7"/>
+                    <!-- Small sparkle (left side, moved up) -->
+                    <path d="M6 4l1 2L9 7l-2 1L6 10l-1-2L3 7l2-1L6 4z" opacity="0.5"/>
+                  </svg>
+                </div>
                 <span class="text-white font-medium">Reinigungsservice</span>
               </div>
               <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
-                <span class="text-xl">🔧</span>
+                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                  </svg>
+                </div>
                 <span class="text-white font-medium">Hausmeisterservice</span>
               </div>
               <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
-                <span class="text-xl">❄️</span>
+                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M2 12h20M5.636 5.636l12.728 12.728M18.364 5.636L5.636 18.364M12 6l-2-2m2 2l2-2m-2 2v4m0-4l-2 2m2-2l2 2M12 18l-2 2m2-2l2 2m-2-2v-4m0 4l-2-2m2 2l2-2M6 12l-2-2m2 2l-2 2m2-2h4m-4 0l2-2m-2 2l2 2M18 12l2-2m-2 2l2 2m-2-2h-4m4 0l-2-2m2 2l-2 2"/>
+                  </svg>
+                </div>
                 <span class="text-white font-medium">Winterdienst</span>
               </div>
             </div>
