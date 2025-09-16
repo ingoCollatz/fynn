@@ -2,6 +2,7 @@
   import HeaderLogo from '$lib/assets/HeaderLogo.svelte';
   import SimpleIcon from './SimpleIcon.svelte';
   import { onMount } from 'svelte';
+  import { slide, fade } from 'svelte/transition';
   
   let mobileMenuOpen = false;
   let scrollY = 0;
@@ -63,10 +64,12 @@
       
       <!-- Logo/Brand -->
       <div class="flex items-center">
-        <HeaderLogo 
-          size={logoSize} 
-          className="hover:scale-105 transition-all duration-300 cursor-pointer" 
-        />
+        <a href="/" aria-label="Go to homepage">
+          <HeaderLogo 
+            size={logoSize} 
+            className="hover:scale-105 transition-all duration-300 cursor-pointer" 
+          />
+        </a>
       </div>
       
       <!-- Desktop Navigation -->
@@ -99,36 +102,36 @@
               >
                 Entrümplung
               </a>
-              <button 
-                on:click={() => scrollToSection('services')}
-                class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+              <a 
+                href="/services/reinigungsservice"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
               >
                 Reinigungsservice
-              </button>
-              <button 
-                on:click={() => scrollToSection('services')}
-                class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+              </a>
+              <a 
+                href="/services/hausmeisterservice"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
               >
                 Hausmeisterservice
-              </button>
-              <button 
-                on:click={() => scrollToSection('services')}
-                class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+              </a>
+              <a 
+                href="/services/winterdienst"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
               >
                 Winterdienst
-              </button>
-              <button 
-                on:click={() => scrollToSection('services')}
-                class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+              </a>
+              <a 
+                href="/services/fertigbauteile"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
               >
                 Einbau von Fertigbauteilen
-              </button>
-              <button 
-                on:click={() => scrollToSection('services')}
-                class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+              </a>
+              <a 
+                href="/services/gartenpflege"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
               >
                 Gartenpflege
-              </button>
+              </a>
               <div class="border-t border-gray-100 mt-2 pt-2">
                 <button 
                   on:click={() => scrollToSection('services')}
@@ -181,9 +184,16 @@
       </button>
     </div>
     
-    <!-- Mobile Navigation -->
-    {#if mobileMenuOpen}
-      <div class="lg:hidden border-t border-gray-100 py-4">
+
+  </div>
+  
+  <!-- Mobile Navigation -->
+  {#if mobileMenuOpen}
+    <div 
+      class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-100 z-50 shadow-lg"
+      transition:slide={{ duration: 300 }}
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <nav class="flex flex-col space-y-4">
           <a 
             href="/"
@@ -208,36 +218,41 @@
               >
                 Entrümplung
               </a>
-              <button 
-                class="block text-left text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
-                on:click={() => scrollToSection('services')}
+              <a 
+                href="/services/reinigungsservice"
+                class="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
+                on:click={closeMobileMenu}
               >
                 Reinigungsservice
-              </button>
-              <button 
-                class="block text-left text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
-                on:click={() => scrollToSection('services')}
+              </a>
+              <a 
+                href="/services/hausmeisterservice"
+                class="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
+                on:click={closeMobileMenu}
               >
                 Hausmeisterservice
-              </button>
-              <button 
-                class="block text-left text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
-                on:click={() => scrollToSection('services')}
+              </a>
+              <a 
+                href="/services/winterdienst"
+                class="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
+                on:click={closeMobileMenu}
               >
                 Winterdienst
-              </button>
-              <button 
-                class="block text-left text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
-                on:click={() => scrollToSection('services')}
+              </a>
+              <a 
+                href="/services/fertigbauteile"
+                class="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
+                on:click={closeMobileMenu}
               >
                 Einbau von Fertigbauteilen
-              </button>
-              <button 
-                class="block text-left text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
-                on:click={() => scrollToSection('services')}
+              </a>
+              <a 
+                href="/services/gartenpflege"
+                class="block text-sm text-gray-600 hover:text-blue-600 transition-colors py-1"
+                on:click={closeMobileMenu}
               >
                 Gartenpflege
-              </button>
+              </a>
             </div>
           </div>
           <button 
@@ -274,6 +289,22 @@
           </div>
         </nav>
       </div>
-    {/if}
-  </div>
+    </div>
+  {/if}
 </header>
+
+<!-- Mobile Menu Backdrop -->
+{#if mobileMenuOpen}
+  <div
+    class="fixed inset-0 bg-transparent z-30 lg:hidden"
+    style="top: {isScrolled ? '4rem' : '6rem'};"
+    transition:fade={{ duration: 200 }}
+    on:click={closeMobileMenu}
+    on:keydown={(e) => e.key === 'Escape' && closeMobileMenu()}
+    role="button"
+    tabindex="0"
+    aria-label="Close mobile menu"
+  ></div>
+{/if}
+
+

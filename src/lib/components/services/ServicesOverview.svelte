@@ -1,7 +1,6 @@
 <script lang="ts">
   export let title: string;
   export let subtitle: string;
-  export let backgroundImage: string = '';
   export let services: Array<{
     title: string;
     description: string;
@@ -13,7 +12,6 @@
 
 <section 
   class="relative py-20 bg-white bg-cover bg-center bg-no-repeat"
-  style={backgroundImage ? `background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${backgroundImage}')` : ''}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
