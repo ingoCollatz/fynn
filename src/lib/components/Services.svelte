@@ -1,35 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  
-  let parallaxElement: HTMLElement;
   let scrollY = 0;
   
-  onMount(() => {
-    const handleScroll = () => {
-      scrollY = window.scrollY;
-      if (parallaxElement) {
-        // Get the Services section's position
-        const servicesSection = document.getElementById('services');
-        if (servicesSection) {
-          const sectionTop = servicesSection.offsetTop;
-          const sectionHeight = servicesSection.offsetHeight;
-          const windowHeight = window.innerHeight;
-          
-          // Calculate relative scroll position for this section
-          const relativeScroll = scrollY - sectionTop + windowHeight;
-          const speed = 0.3;
-          
-          // Only apply parallax when section is visible
-          if (relativeScroll > 0 && relativeScroll < sectionHeight + windowHeight) {
-            parallaxElement.style.transform = `translateY(${relativeScroll * speed}px)`;
-          }
-        }
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  });
+  // Parallax transform calculation (same as Hero)
+  $: parallaxTransform = `translateY(${scrollY * 0.3}px)`;
 
   const services = [
     { 
@@ -77,12 +50,14 @@
   }
 </script>
 
+<svelte:window bind:scrollY={scrollY} />
+
 <section id="services" class="py-20 bg-gradient-to-br from-gray-50 via-green-50 to-blue-50 relative overflow-hidden scroll-mt-20">
   <!-- Background Image with Parallax -->
   <div 
-    bind:this={parallaxElement}
     class="absolute inset-0 w-full h-[150%] -top-[50%] bg-cover bg-center bg-no-repeat opacity-60 will-change-transform
            bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')]"
+    style:transform={parallaxTransform}
   ></div>
   
   <!-- Decorative Background Elements -->

@@ -1,23 +1,11 @@
 <script lang="ts">
   import Logo from '$lib/assets/Logo.svelte';
   import SimpleIcon from './SimpleIcon.svelte';
-  import { onMount } from 'svelte';
   
-  let parallaxElement: HTMLElement;
   let scrollY = 0;
   
-  onMount(() => {
-    const handleScroll = () => {
-      scrollY = window.scrollY;
-      if (parallaxElement) {
-        const speed = 0.5; // Adjust this value to control parallax speed
-        parallaxElement.style.transform = `translateY(${scrollY * speed}px)`;
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  });
+  // Parallax transform calculation
+  $: parallaxTransform = `translateY(${scrollY * 0.5}px)`;
   
   function scrollToContact() {
     const contactElement = document.getElementById('contact');
@@ -32,14 +20,16 @@
   }
 </script>
 
+<svelte:window bind:scrollY={scrollY} />
+
 <section id="home" class="relative min-h-screen flex items-center overflow-hidden scroll-mt-20">
   <!-- Background Image -->
   <div class="absolute inset-0 bg-gradient-to-br from-green-50 via-amber-50 to-orange-50"></div>
     <!-- Background Image with Parallax -->
   <div 
-    bind:this={parallaxElement}
     class="absolute inset-0 w-full h-[120%] -top-[10%] bg-cover bg-center bg-no-repeat opacity-60 will-change-transform
            bg-[url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')]"
+    style:transform={parallaxTransform}
   ></div>
   
   <!-- Content Card -->
