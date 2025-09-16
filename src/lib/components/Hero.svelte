@@ -171,17 +171,6 @@
             </svg>
             <span>Anrufen</span>
           </a>
-          
-          <!-- Desktop: WhatsApp Button -->
-          <a 
-            href="https://wa.me/49123456789" 
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hidden sm:flex bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:border-green-300 hover:bg-green-50 transition-all duration-200 items-center justify-center space-x-2"
-          >
-            <SimpleIcon name="whatsapp" size="20" className="text-green-600" />
-            <span>WhatsApp Chat</span>
-          </a>
         </div>
       </div>
 
