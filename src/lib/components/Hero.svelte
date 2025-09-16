@@ -92,11 +92,23 @@
             Kostenlose Beratung anfragen
           </button>
           
+          <!-- Mobile: Phone Button -->
+          <a 
+            href="tel:+49123456789"
+            class="sm:hidden bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 flex items-center justify-center space-x-2"
+          >
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <span>Anrufen</span>
+          </a>
+          
+          <!-- Desktop: WhatsApp Button -->
           <a 
             href="https://wa.me/49123456789" 
             target="_blank"
             rel="noopener noreferrer"
-            class="bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:border-green-300 hover:bg-green-50 transition-all duration-200 flex items-center justify-center space-x-2"
+            class="hidden sm:flex bg-white border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:border-green-300 hover:bg-green-50 transition-all duration-200 items-center justify-center space-x-2"
           >
             <SimpleIcon name="whatsapp" size="20" className="text-green-600" />
             <span>WhatsApp Chat</span>
