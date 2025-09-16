@@ -158,6 +158,47 @@
                 </div>
                 <span class="text-white font-medium">Winterdienst</span>
               </div>
+              <div class="bg-white/20 rounded-lg p-3 flex items-center space-x-3">
+                <div class="w-6 h-6 bg-white/30 rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <!-- Vertical lattice mast (fatter) -->
+                    <rect x="10" y="4" width="4" height="16" fill="currentColor"/>
+                    <!-- Mast lattice pattern (thicker strokes) -->
+                    <path d="M10 5 L12 7 L14 5 M10 8 L12 10 L14 8 M10 11 L12 13 L14 11 M10 14 L12 16 L14 14 M10 17 L12 19 L14 17" 
+                          stroke="rgba(0,0,0,0.3)" stroke-width="0.8" fill="none"/>
+                    
+                    <!-- Rotating connection at mast top (bigger) -->
+                    <circle cx="12" cy="4" r="2" fill="currentColor"/>
+                    <circle cx="12" cy="4" r="1" fill="rgba(255,255,255,0.3)"/>
+                    
+                    <!-- Long horizontal lattice arm (fatter) -->
+                    <rect x="14" y="3" width="9" height="2" fill="currentColor"/>
+                    <!-- Counter arm (fatter, shorter rear end) -->
+                    <rect x="3" y="3" width="9" height="2" fill="currentColor"/>
+                    
+                    <!-- Horizontal arm lattice pattern (thicker) -->
+                    <path d="M3 3 L4 5 L5 3 L6 5 L7 3 L8 5 L9 3 L10 5 L11 3 L12 5" 
+                          stroke="rgba(0,0,0,0.25)" stroke-width="0.6" fill="none"/>
+                    <path d="M14 3 L15 5 L16 3 L17 5 L18 3 L19 5 L20 3 L21 5 L22 3 L23 5" 
+                          stroke="rgba(0,0,0,0.25)" stroke-width="0.6" fill="none"/>
+                    
+                    <!-- Dangling hook and cable (thicker, shorter) -->
+                    <rect x="21" y="5" width="1" height="7" fill="rgba(255,255,255,0.9)"/>
+                    <path d="M21 12 Q23 12 23 14 Q23 16 21 16" 
+                          stroke="rgba(255,255,255,1)" stroke-width="1.2" fill="none"/>
+                    
+                    <!-- Counterweights on rear end (bigger) -->
+                    <rect x="3" y="1" width="3" height="3" rx="0.5" fill="rgba(255,255,255,0.9)"/>
+                    <rect x="3.3" y="1.5" width="2.4" height="0.6" fill="rgba(0,0,0,0.2)"/>
+                    <rect x="3.3" y="2.5" width="2.4" height="0.6" fill="rgba(0,0,0,0.2)"/>
+                    <rect x="3.3" y="3.5" width="2.4" height="0.6" fill="rgba(0,0,0,0.2)"/>
+                    
+                    <!-- Crane base (wider) -->
+                    <rect x="9" y="19" width="6" height="3" rx="0.8" fill="currentColor"/>
+                  </svg>
+                </div>
+                <span class="text-white font-medium">Einbau von Fertigbauteilen</span>
+              </div>
             </div>
           </div>
         </div>
